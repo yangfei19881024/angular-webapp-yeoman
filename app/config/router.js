@@ -34,7 +34,7 @@ config([
 		})
 		//产品页路由配置
 		.state("product",{
-			url:'/product/:pname/:pid',
+			url:'/product/:pname/:pid?a&b',
 			templateUrl:"/views/product.html",
 			controller:'ProductController'
 		})

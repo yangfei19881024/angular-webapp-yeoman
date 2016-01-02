@@ -9,11 +9,14 @@
  * Main module of the application.
  */
 angular.module("Admin.controller",[]);
+angular.module("Admin.directive",[]);
+angular.module("Admin.services",[]);
 
 angular
   .module('Admin', [
     'ngTouch',
     'Admin.controller',
-    'ui.router',
+    'Admin.directive',
+    'Admin.services',
+    'ui.router'
   ])
-  

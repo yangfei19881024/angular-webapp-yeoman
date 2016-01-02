@@ -1,0 +1,42 @@
+angular.module("Admin")
+.config([
+	'$locationProvider',
+	function($locationProvider){
+		$locationProvider.html5Mode({enabled:true,requireBase:false})
+	}
+]).
+config([
+	'$stateProvider',
+	'$urlRouterProvider',
+	function($stateProvider,$urlRouterProvider){
+		$urlRouterProvider.otherwise("/home");
+		$stateProvider
+		//主页路由配置
+		.state("home",{
+			url:'/home',
+			templateUrl:"/views/home.html",
+			controller:'HomeController'
+		})
+    .state("home.shop",{
+			url:'/shop',
+			templateUrl:"/views/home/shop.html",
+			//controller:'HomeController'
+		})
+		.state("home.service",{
+			url:'/service',
+			templateUrl:"/views/home/service.html",
+			//controller:'HomeController'
+		})
+		.state("home.activity",{
+			url:'/activity',
+			templateUrl:"/views/home/activity.html",
+			//controller:'HomeController'
+		})
+		//产品页路由配置
+		.state("product",{
+			url:'/product/:pname/:pid',
+			templateUrl:"/views/product.html",
+			controller:'ProductController'
+		})
+	}
+])

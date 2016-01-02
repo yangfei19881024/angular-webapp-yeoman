@@ -9,11 +9,11 @@ config([
 	'$stateProvider',
 	'$urlRouterProvider',
 	function($stateProvider,$urlRouterProvider){
-		$urlRouterProvider.otherwise("/home");
+		$urlRouterProvider.otherwise("/");
 		$stateProvider
 		//主页路由配置
 		.state("home",{
-			url:'/home',
+			url:'/',
 			templateUrl:"/views/home.html",
 			controller:'HomeController'
 		})
